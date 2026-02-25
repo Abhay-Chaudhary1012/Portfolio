@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #020617;
+      --border: #1e293b;
+      --text: #e5e7eb;
+      --muted: #cbd5f5;
+      --accent: #22c55e;
+      --accent-2: #16a34a;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      background: var(--bg);
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      transition: background .3s ease;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 360px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.4);
+      transition: background .3s ease, border-color .3s ease, box-shadow .3s ease;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      text-align: center;
+      font-size: 22px;
+    }
+
+    label {
+      display: block;
+      margin: 12px 0 6px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+    }
+
+    input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(34,197,94,.15);
+      background: rgba(255,255,255,.03);
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 12px 0 16px;
+      font-size: 12px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    button {
+      width: 100%;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #020617;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform .15s ease, box-shadow .15s ease, opacity .15s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(34,197,94,.25);
+      opacity: .95;
+    }
+
+    button:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    /* 📱 Mobile: brighter theme */
+    @media (max-width: 640px) {
+      :root {
+        --bg: #020617;        /* slightly brighter */
+        --card: #0f172a;     /* card brighter */
+        --border: #334155;
+        --text: #f8fafc;
+        --muted: #e2e8f0;
+        --accent: #38bdf8;   /* cyan accent for pop */
+        --accent-2: #22c55e;
+      }
+
+      .card {
+        box-shadow: 0 12px 35px rgba(56,189,248,.25);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>Login</h1>
+
+    <form action="#">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" placeholder="Enter your username" required>
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" placeholder="Enter your password" required>
+
+      <div class="actions">
+        <a href="#reset">Forgot password?</a>
+      </div>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>
